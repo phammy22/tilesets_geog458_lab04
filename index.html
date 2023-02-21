@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Toggle Maps</title>
+    <title>Tileset Maps</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
@@ -22,11 +22,11 @@
 
         /* the style of the layer control menu */
         #menu {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             position: absolute;
             z-index: 1;
-            top: 10px;
-            right: 10px;
+            top: 250px;
+            left: 50px;
             border-radius: 3px;
             width: 120px;
             border: 1px solid rgba(0, 0, 0, 0.4);
@@ -65,6 +65,32 @@
         #menu a.active:hover {
             background: #3074a4;
         }
+
+        #map-overlay {
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 20px;
+            margin-left: 50px;
+            width: 550px;
+            height: 120px;
+            border-radius: 3px;
+            padding: 10px 20px 10px 10px;
+        }
+
+        #title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18pt;
+            color: black;
+        }
+
+
+        #subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 9.5pt;
+            color: black;
+        }
     </style>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
 </head>
@@ -72,6 +98,19 @@
 <body>
     <nav id="menu"></nav>
     <div id='map'></div>
+    <div id="map-overlay">
+        <div id="title">
+            Tileset Maps
+        </div>
+        <div id="subtitle">
+            The following webmap has four different types of maps that can be toggled to display. 
+            If the map does not display after selecting the toggle button, try to turn off selection of other maps to properly view the map you'd like to view. 
+            The blue theme and pride theme maps can be selected to change the theme of the base map.
+            There is also an option to specifically see the blue theme and parking data together.
+            The parking map displays the "Peak Hour Parking Restrictions" that exist during certain hours of the day in Seattle. This data was taken from 
+            <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::peak-hour-parking-restrictions-3/about">Seattle Geodata</a>.
+        </div>
+    </div>
     <script type="text/javascript">
         mapboxgl.accessToken =
             'pk.eyJ1IjoicGhhbW15MjIiLCJhIjoiY2xhZ2JoNmEwMHI2azN1bzFwczlkMTNqdiJ9.T2vpz0gVbuFh7jAZJo67QA';
